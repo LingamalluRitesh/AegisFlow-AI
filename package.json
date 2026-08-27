@@ -1,0 +1,22 @@
+{
+  "name": "aegisflow-ai-monorepo",
+  "version": "2.4.0",
+  "private": true,
+  "description": "Enterprise Real-Time Streaming AI, Fraud Sentinel & Recommendation Mesh",
+  "scripts": {
+    "start": "python main.py --mode gateway",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test": "python -m pytest tests/ -v",
+    "lint": "npm --prefix frontend run lint",
+    "simulator": "python main.py --mode simulator",
+    "stream": "python main.py --mode stream"
+  },
+  "workspaces": [
+    "frontend",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
