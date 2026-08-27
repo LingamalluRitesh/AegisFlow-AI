@@ -1,0 +1,13 @@
+{
+  "name": "@aegisflow/sdk",
+  "version": "2.4.0",
+  "description": "Official TypeScript/JavaScript SDK for AegisFlow AI Platform",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": ["aegisflow", "fraud-detection", "streaming-ml", "recommendations"],
+  "author": "AegisFlow Engineering",
+  "license": "Apache-2.0"
+}
