@@ -1,0 +1,498 @@
+"""
+Telecom & IoT Defense Matrix: Multi-Access Edge Compute (MEC) Container Poisoning Defense
+Domain Key: edge_compute_mec
+"""
+
+from typing import List
+from backend.services.fraud_engine.rule_engine import Rule, Condition
+from backend.core.types import ActionType
+
+def get_edge_compute_mec_rules() -> List[Rule]:
+    """Returns full calibrated rules for Multi-Access Edge Compute (MEC) Container Poisoning Defense."""
+    rules = []
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_001",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #01",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 1.",
+            priority=7,
+            conditions=[
+                Condition(field="amount", operator=">", value=75.0),
+                Condition(field="tx_count_5m", operator=">=", value=1),
+                Condition(field="tx_amount_sum_1h", operator=">", value=150.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=35.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+            ],
+            action=ActionType.MANUAL_REVIEW,
+            risk_score_boost=0.441,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_002",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #02",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 2.",
+            priority=9,
+            conditions=[
+                Condition(field="amount", operator=">", value=150.0),
+                Condition(field="tx_count_5m", operator=">=", value=1),
+                Condition(field="tx_amount_sum_1h", operator=">", value=300.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=70.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+            ],
+            action=ActionType.MANUAL_REVIEW,
+            risk_score_boost=0.462,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_003",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #03",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 3.",
+            priority=11,
+            conditions=[
+                Condition(field="amount", operator=">", value=225.0),
+                Condition(field="tx_count_5m", operator=">=", value=1),
+                Condition(field="tx_amount_sum_1h", operator=">", value=450.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=105.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+            ],
+            action=ActionType.MANUAL_REVIEW,
+            risk_score_boost=0.483,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_004",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #04",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 4.",
+            priority=13,
+            conditions=[
+                Condition(field="amount", operator=">", value=300.0),
+                Condition(field="tx_count_5m", operator=">=", value=1),
+                Condition(field="tx_amount_sum_1h", operator=">", value=600.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=140.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+            ],
+            action=ActionType.MANUAL_REVIEW,
+            risk_score_boost=0.504,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_005",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #05",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 5.",
+            priority=15,
+            conditions=[
+                Condition(field="amount", operator=">", value=375.0),
+                Condition(field="tx_count_5m", operator=">=", value=1),
+                Condition(field="tx_amount_sum_1h", operator=">", value=750.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=175.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+            ],
+            action=ActionType.MANUAL_REVIEW,
+            risk_score_boost=0.525,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_006",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #06",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 6.",
+            priority=17,
+            conditions=[
+                Condition(field="amount", operator=">", value=450.0),
+                Condition(field="tx_count_5m", operator=">=", value=2),
+                Condition(field="tx_amount_sum_1h", operator=">", value=900.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=210.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=3),
+            ],
+            action=ActionType.MANUAL_REVIEW,
+            risk_score_boost=0.546,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_007",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #07",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 7.",
+            priority=19,
+            conditions=[
+                Condition(field="amount", operator=">", value=525.0),
+                Condition(field="tx_count_5m", operator=">=", value=2),
+                Condition(field="tx_amount_sum_1h", operator=">", value=1050.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=245.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=4),
+            ],
+            action=ActionType.MANUAL_REVIEW,
+            risk_score_boost=0.567,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_008",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #08",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 8.",
+            priority=21,
+            conditions=[
+                Condition(field="amount", operator=">", value=600.0),
+                Condition(field="tx_count_5m", operator=">=", value=2),
+                Condition(field="tx_amount_sum_1h", operator=">", value=1200.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=280.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=1),
+            ],
+            action=ActionType.MANUAL_REVIEW,
+            risk_score_boost=0.588,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_009",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #09",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 9.",
+            priority=23,
+            conditions=[
+                Condition(field="amount", operator=">", value=675.0),
+                Condition(field="tx_count_5m", operator=">=", value=3),
+                Condition(field="tx_amount_sum_1h", operator=">", value=1350.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=315.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=2),
+            ],
+            action=ActionType.CHALLENGE_2FA,
+            risk_score_boost=0.609,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_010",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #10",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 10.",
+            priority=25,
+            conditions=[
+                Condition(field="amount", operator=">", value=750.0),
+                Condition(field="tx_count_5m", operator=">=", value=3),
+                Condition(field="tx_amount_sum_1h", operator=">", value=1500.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=350.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=3),
+            ],
+            action=ActionType.CHALLENGE_2FA,
+            risk_score_boost=0.63,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_011",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #11",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 11.",
+            priority=27,
+            conditions=[
+                Condition(field="amount", operator=">", value=825.0),
+                Condition(field="tx_count_5m", operator=">=", value=3),
+                Condition(field="tx_amount_sum_1h", operator=">", value=1650.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=385.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=4),
+                Condition(field="failed_tx_count_1h", operator=">=", value=3),
+            ],
+            action=ActionType.CHALLENGE_2FA,
+            risk_score_boost=0.651,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_012",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #12",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 12.",
+            priority=29,
+            conditions=[
+                Condition(field="amount", operator=">", value=900.0),
+                Condition(field="tx_count_5m", operator=">=", value=4),
+                Condition(field="tx_amount_sum_1h", operator=">", value=1800.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=420.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=1),
+                Condition(field="failed_tx_count_1h", operator=">=", value=1),
+            ],
+            action=ActionType.CHALLENGE_2FA,
+            risk_score_boost=0.672,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_013",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #13",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 13.",
+            priority=31,
+            conditions=[
+                Condition(field="amount", operator=">", value=975.0),
+                Condition(field="tx_count_5m", operator=">=", value=4),
+                Condition(field="tx_amount_sum_1h", operator=">", value=1950.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=455.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=2),
+                Condition(field="failed_tx_count_1h", operator=">=", value=2),
+            ],
+            action=ActionType.CHALLENGE_2FA,
+            risk_score_boost=0.693,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_014",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #14",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 14.",
+            priority=33,
+            conditions=[
+                Condition(field="amount", operator=">", value=1050.0),
+                Condition(field="tx_count_5m", operator=">=", value=4),
+                Condition(field="tx_amount_sum_1h", operator=">", value=2100.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=490.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=3),
+                Condition(field="failed_tx_count_1h", operator=">=", value=3),
+            ],
+            action=ActionType.CHALLENGE_2FA,
+            risk_score_boost=0.714,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_015",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #15",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 15.",
+            priority=35,
+            conditions=[
+                Condition(field="amount", operator=">", value=1125.0),
+                Condition(field="tx_count_5m", operator=">=", value=5),
+                Condition(field="tx_amount_sum_1h", operator=">", value=2250.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=525.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=4),
+                Condition(field="failed_tx_count_1h", operator=">=", value=1),
+            ],
+            action=ActionType.CHALLENGE_2FA,
+            risk_score_boost=0.735,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_016",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #16",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 16.",
+            priority=37,
+            conditions=[
+                Condition(field="amount", operator=">", value=1200.0),
+                Condition(field="tx_count_5m", operator=">=", value=5),
+                Condition(field="tx_amount_sum_1h", operator=">", value=2400.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=560.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=1),
+                Condition(field="failed_tx_count_1h", operator=">=", value=2),
+            ],
+            action=ActionType.CHALLENGE_2FA,
+            risk_score_boost=0.756,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_017",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #17",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 17.",
+            priority=39,
+            conditions=[
+                Condition(field="amount", operator=">", value=1275.0),
+                Condition(field="tx_count_5m", operator=">=", value=5),
+                Condition(field="tx_amount_sum_1h", operator=">", value=2550.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=595.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=2),
+                Condition(field="failed_tx_count_1h", operator=">=", value=3),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.777,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_018",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #18",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 18.",
+            priority=41,
+            conditions=[
+                Condition(field="amount", operator=">", value=1350.0),
+                Condition(field="tx_count_5m", operator=">=", value=6),
+                Condition(field="tx_amount_sum_1h", operator=">", value=2700.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=630.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=3),
+                Condition(field="failed_tx_count_1h", operator=">=", value=1),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.798,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_019",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #19",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 19.",
+            priority=43,
+            conditions=[
+                Condition(field="amount", operator=">", value=1425.0),
+                Condition(field="tx_count_5m", operator=">=", value=6),
+                Condition(field="tx_amount_sum_1h", operator=">", value=2850.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=665.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=4),
+                Condition(field="failed_tx_count_1h", operator=">=", value=2),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.819,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_020",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #20",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 20.",
+            priority=45,
+            conditions=[
+                Condition(field="amount", operator=">", value=1500.0),
+                Condition(field="tx_count_5m", operator=">=", value=6),
+                Condition(field="tx_amount_sum_1h", operator=">", value=3000.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=700.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=1),
+                Condition(field="failed_tx_count_1h", operator=">=", value=3),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.84,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_021",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #21",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 21.",
+            priority=47,
+            conditions=[
+                Condition(field="amount", operator=">", value=1575.0),
+                Condition(field="tx_count_5m", operator=">=", value=7),
+                Condition(field="tx_amount_sum_1h", operator=">", value=3150.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=735.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=2),
+                Condition(field="failed_tx_count_1h", operator=">=", value=1),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.861,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_022",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #22",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 22.",
+            priority=49,
+            conditions=[
+                Condition(field="amount", operator=">", value=1650.0),
+                Condition(field="tx_count_5m", operator=">=", value=7),
+                Condition(field="tx_amount_sum_1h", operator=">", value=3300.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=770.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=3),
+                Condition(field="failed_tx_count_1h", operator=">=", value=2),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.882,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_023",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #23",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 23.",
+            priority=51,
+            conditions=[
+                Condition(field="amount", operator=">", value=1725.0),
+                Condition(field="tx_count_5m", operator=">=", value=7),
+                Condition(field="tx_amount_sum_1h", operator=">", value=3450.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=805.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=4),
+                Condition(field="failed_tx_count_1h", operator=">=", value=3),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.903,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_024",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #24",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 24.",
+            priority=53,
+            conditions=[
+                Condition(field="amount", operator=">", value=1800.0),
+                Condition(field="tx_count_5m", operator=">=", value=8),
+                Condition(field="tx_amount_sum_1h", operator=">", value=3600.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=840.0),
+                Condition(field="is_new_device_used", operator="==", value=0),
+                Condition(field="distinct_ips_24h", operator=">=", value=1),
+                Condition(field="failed_tx_count_1h", operator=">=", value=1),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.924,
+            is_active=True,
+        )
+    )
+    rules.append(
+        Rule(
+            rule_id="TEL_EDGE_COMPUTE_MEC_025",
+            name="Multi-Access Edge Compute (MEC) Container Poisoning Defense - Rule #25",
+            description="Telecom risk and IoT telemetry anomaly check for edge_compute_mec at tier 25.",
+            priority=55,
+            conditions=[
+                Condition(field="amount", operator=">", value=1875.0),
+                Condition(field="tx_count_5m", operator=">=", value=8),
+                Condition(field="tx_amount_sum_1h", operator=">", value=3750.0),
+                Condition(field="max_geo_leap_speed_kmh", operator=">", value=875.0),
+                Condition(field="is_new_device_used", operator="==", value=1),
+                Condition(field="distinct_ips_24h", operator=">=", value=2),
+                Condition(field="failed_tx_count_1h", operator=">=", value=2),
+            ],
+            action=ActionType.BLOCK,
+            risk_score_boost=0.945,
+            is_active=True,
+        )
+    )
+    return rules
