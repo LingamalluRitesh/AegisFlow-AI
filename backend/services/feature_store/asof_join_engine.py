@@ -29,7 +29,8 @@ class AsOfTemporalJoinEngine:
             self._entity_timeseries[view_name][entity_key] = []
 
         timeline = self._entity_timeseries[view_name][entity_key]
-        bisect.insort(timeline, (timestamp, features))
+        idx = bisect.bisect_right(timeline, timestamp, key=lambda x: x[0])
+        timeline.insert(idx, (timestamp, features))
 
     def point_in_time_lookup(
         self,
@@ -41,7 +42,7 @@ class AsOfTemporalJoinEngine:
             return None
 
         timeline = self._entity_timeseries[view_name][entity_key]
-        idx = bisect.bisect_right(timeline, (query_timestamp, {}))
+        idx = bisect.bisect_right(timeline, query_timestamp, key=lambda x: x[0])
         if idx == 0:
             return None
         return timeline[idx - 1][1]
